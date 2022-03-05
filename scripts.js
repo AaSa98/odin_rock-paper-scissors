@@ -34,3 +34,50 @@ function playerInput(){
     }
     return playerChoice
 }
+
+function playRound(computerChoice, playerChoice){
+    var result
+
+    if(computerChoice == playerChoice){
+        result = "Draft"
+        console.log(result)
+        return result
+    }
+
+    else if(computerChoice=="Rock" && playerChoice== "Paper"){
+        result = "Player wins"
+        console.log(result)
+        return result
+    }
+
+    else if(computerChoice=="Rock" && playerChoice== "Scissors"){
+        result = "Computer wins"
+        console.log(result)
+        return result
+    }
+
+    else if(computerChoice=="Paper" && playerChoice== "Scissors"){
+        result = "Player wins"
+        console.log(result)
+        return result
+    }
+
+    else if(computerChoice=="Paper" && playerChoice== "Rock"){
+        result = "Computer wins"
+        console.log(result)
+        return result
+    }
+    else if(computerChoice=="Scissors" && playerChoice== "Paper"){
+        result = "Computer wins"
+        console.log(result)
+        return result
+    }
+
+    else if(computerChoice=="Scissors" && playerChoice== "Rock"){
+        result = "Player wins"
+        console.log(result)
+        return result
+    }
+}
+
+playRound(computerPlay(), playerInput())
