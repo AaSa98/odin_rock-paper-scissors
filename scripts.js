@@ -1,9 +1,10 @@
+//Erzeugt random Zahl von min - max
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
   }
-
+//Spielzug des Computers, diese Funktion ruft getRandomInt() auf und ordnet Zahl von 0-2 entsprechend Schere, Stein oder Papier zu
 function computerPlay(){
     var computerNumber = getRandomInt(0, 3)
     var computerChoice
@@ -19,7 +20,7 @@ function computerPlay(){
     return computerChoice
 
 }
-
+//Funktion des Spielerinputs, in Fenster wird Spieler aufgefordert Zahl von 0-2 einzugeben, diese wird entsprechender "Waffe" zugeordnet. (Siehe computerPlay)
 function playerInput(){
     var playerNumber = prompt("Choose your weapon champion! 0 = Rock, 1 = Paper, 2 = Scissors")
     var playerChoice
@@ -34,7 +35,7 @@ function playerInput(){
     }
     return playerChoice
 }
-
+//Funktion, die eine Runde SSP spielt, indem computerPlay() und playerInput() aufgerufen wird und je nach return-Wert beider Funktionen der Gewinner festgesstellt wird
 function playRound(computerChoice, playerChoice){
     var result
 
@@ -79,7 +80,7 @@ function playRound(computerChoice, playerChoice){
         return result
     }
 }
-
+//Funktion die Spiel startet. es wird so oft mittels playRound() gespielt, bis entweder Computer oder Spieler 5 Punkte und somit gewonnen hat
 function game(){
     var playerScore = 0
     var computerScore = 0
