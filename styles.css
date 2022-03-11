@@ -33,4 +33,15 @@ h1 {
 }
 
 .select_btn:active{
-        background-color:#5e709f;}
+    background-color:#5e709f;
+}
+
+.btn_img{
+    width: 100px;
+    height: auto;
+}
+
+.btn_text{
+    font-size: 20px;
+    font-weight: 500;
+}
