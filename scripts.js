@@ -6,6 +6,8 @@ var playerScore = 0
 var computerScore = 0
 playercount.textContent = "Player-Count: " + playerScore;
 comcount.textContent = "COM-Count: " + computerScore;
+const img_player = document.getElementById("img_player");
+const img_com = document.getElementById("img_com");
 
 //Erzeugt random Zahl von min - max
 function getRandomInt(min, max) {
@@ -18,14 +20,16 @@ function getRandomInt(min, max) {
 function computerPlay(){
     var computerNumber = getRandomInt(0, 3)
     var computerChoice
+    
+    //Bildwechsel der Anzeige falls Unentschieden ist
     if(computerNumber == 0){
-        computerChoice = "Rock"
+        computerChoice = "Rock";
     }
     else if (computerNumber == 1){
-        computerChoice = "Paper"
+        computerChoice = "Paper";
     }
     else{
-        computerChoice = "Scissors"
+        computerChoice = "Scissors";
     }
     return computerChoice
 
@@ -40,7 +44,19 @@ function playRound(computerChoice, playerChoice){
             result = "Draft!"
             console.log(result)
             output_field.textContent = result;
-            gameWon()
+            if(playerChoice == "Rock"){
+                img_com.src="./pictures/rock.png";
+                img_player.src="./pictures/rock.png";
+            }
+            else if(playerChoice == "Paper"){
+                img_com.src="./pictures/paper.png";
+                img_player.src="./pictures/paper.png";
+            }
+            else{
+                img_com.src="./pictures/scissors.png";
+                img_player.src="./pictures/scissors.png";
+            }
+            gameWon(playerChoice)
             return result;
         }
 
@@ -50,6 +66,8 @@ function playRound(computerChoice, playerChoice){
             output_field.textContent = result;
             playerScore++;
             playercount.textContent = "Player-Count: " + playerScore;
+            img_com.src="./pictures/rock.png";
+            img_player.src="./pictures/paper.png";
             gameWon()
             return result;
         }
@@ -60,6 +78,8 @@ function playRound(computerChoice, playerChoice){
             output_field.textContent = result;
             computerScore++;
             comcount.textContent = "COM-Count: " + computerScore;
+            img_com.src="./pictures/rock.png";
+            img_player.src="./pictures/scissors.png";
             gameWon()
             return result;
         }
@@ -70,6 +90,8 @@ function playRound(computerChoice, playerChoice){
             output_field.textContent = result;
             playerScore++;
             playercount.textContent = "Player-Count: " + playerScore;
+            img_com.src="./pictures/paper.png";
+            img_player.src="./pictures/scissors.png";
             gameWon()
             return result;
         }
@@ -80,6 +102,8 @@ function playRound(computerChoice, playerChoice){
             output_field.textContent = result;
             computerScore++;
             comcount.textContent = "COM-Count: " + computerScore;
+            img_com.src="./pictures/paper.png";
+            img_player.src="./pictures/rock.png";
             gameWon()
             return result;
         }
@@ -89,6 +113,8 @@ function playRound(computerChoice, playerChoice){
             output_field.textContent = result;
             computerScore++;
             comcount.textContent = "COM-Count: " + computerScore;
+            img_com.src="./pictures/scissors.png";
+            img_player.src="./pictures/paper.png";
             gameWon()
             return result;
         }
@@ -99,6 +125,8 @@ function playRound(computerChoice, playerChoice){
             output_field.textContent = result;
             playerScore++;
             playercount.textContent = "Player-Count: " + playerScore;
+            img_com.src="./pictures/scissors.png";
+            img_player.src="./pictures/rock.png";
             gameWon()
             return result;
         }
