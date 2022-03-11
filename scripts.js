@@ -1,3 +1,6 @@
+
+const output_field = document.getElementById("output_text");
+
 //Erzeugt random Zahl von min - max
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -42,41 +45,48 @@ function playRound(computerChoice, playerChoice){
     if(computerChoice == playerChoice){
         result = "Draft!"
         console.log(result)
+        output_field.textContent = result;
         return result
     }
 
     else if(computerChoice=="Rock" && playerChoice== "Paper"){
         result = "Player wins"
         console.log(result)
+        output_field.textContent = result;
         return result
     }
 
     else if(computerChoice=="Rock" && playerChoice== "Scissors"){
         result = "Computer wins"
         console.log(result)
+        output_field.textContent = result;
         return result
     }
 
     else if(computerChoice=="Paper" && playerChoice== "Scissors"){
         result = "Player wins"
         console.log(result)
+        output_field.textContent = result;
         return result
     }
 
     else if(computerChoice=="Paper" && playerChoice== "Rock"){
         result = "Computer wins"
         console.log(result)
+        output_field.textContent = result;
         return result
     }
     else if(computerChoice=="Scissors" && playerChoice== "Paper"){
         result = "Computer wins"
         console.log(result)
+        output_field.textContent = result;
         return result
     }
 
     else if(computerChoice=="Scissors" && playerChoice== "Rock"){
         result = "Player wins"
         console.log(result)
+        output_field.textContent = result;
         return result
     }
 }
